@@ -1,0 +1,26 @@
+.section{
+    background-image: url("../../assets/img/Picture.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 696px;
+}
+.button{
+    margin-top: 40px;
+    padding: 16px 60px;
+    border-radius: 200px;
+    border: none;
+    background-color: #D84343;
+    color: white;
+}
+.heading{
+    color: white;
+    font-size: 3rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+}
+.info{
+    color: white;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
