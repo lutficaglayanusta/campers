@@ -1,0 +1,122 @@
+:root{
+  --muted: #6b7280;
+  --text: #111827;
+  --card-border: #e6e6ea;
+  --accent: #ef4444;
+}
+
+.sidebar{
+  width: 280px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.locationBox{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.locationLabel{font-size:12px;color:var(--muted)}
+
+.locationInput{
+  background:#f7f7f8;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid transparent;
+  display:flex;
+  align-items:center;
+}
+
+.filtersHeader{font-size:12px;color:var(--muted);margin-top:4px}
+
+.sectionTitle{
+  font-size:16px;
+  color:var(--text);
+  margin:8px 0 6px;
+  font-weight:600;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:6px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-radius:12px;
+  padding:14px 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  min-height:72px;
+  justify-content:center;
+  font-size:13px;
+  color:#374151;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .12s ease;
+  text-align: center;
+}
+
+.cardSelected{
+  border-color:var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Prefer the :has selector where supported, but keep a reliable fallback for broad support */
+label.card:has(input:checked){
+  border: 1px solid var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Fallback for browsers without :has() - rely on input + label structure */
+.inputHidden:checked + label.card{
+  border: 1px solid var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Icon and label color when selected */
+label.card:has(input:checked) .cardLabel{ color:var(--accent); }
+label.card:has(input:checked) .iconWrap{ color:var(--accent); }
+.inputHidden:checked + label.card .cardLabel{ color:var(--accent); }
+.inputHidden:checked + label.card .iconWrap{ color:var(--accent); }
+
+.iconWrap{
+  width:32px;
+  height:32px;
+}
+
+.searchBtn{
+  margin-top:10px;
+  width:160px;
+  padding:12px 18px;
+  background:var(--accent);
+  color: #fff;
+  border:none;
+  border-radius:999px;
+  font-size:14px;
+  cursor:pointer;
+  align-self:flex-start;
+}
+
+.inputHidden{position:absolute;left:-9999px}
+
+@media (max-width:640px){
+  .sidebar{width:100%;padding:16px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+

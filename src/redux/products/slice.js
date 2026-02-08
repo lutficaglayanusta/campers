@@ -8,7 +8,7 @@ const productSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchAllProduct.fulfilled, (state, action) => {
-      state.items = action.payload;
+      state.items = action.payload.items;
     });
   },
 });
