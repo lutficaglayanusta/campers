@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const CatologPage = lazy(() => import("./pages/CatologPage"));
+const ProductDetailPage = lazy(() => import("./pages/ProductDetailPage"));
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/"  element={<HomePage />} />
           <Route path="/catalog" element={<CatologPage />} />
+          <Route path="/catalog/:id" element={<ProductDetailPage />} />
         </Routes>
       </Suspense>
     </>

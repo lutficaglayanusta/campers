@@ -8,6 +8,7 @@ html{
 }
 .container{
   max-width: 1440px;
+  margin: 0 auto;
 }
 .header-container{
   display: flex;
@@ -18,4 +19,8 @@ html{
   position: absolute;
   left: 64px;
   top: 260px;
+}
+.catalog-container{
+  display: flex;
+  gap: 100px;
 }

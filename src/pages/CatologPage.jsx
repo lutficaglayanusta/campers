@@ -15,7 +15,7 @@ const CatologPage = () => {
 
   return (
     <section>
-      <div className="container">
+      <div className="container catalog-container">
         <SideBar />
         <CatalogSection/>
       </div>
