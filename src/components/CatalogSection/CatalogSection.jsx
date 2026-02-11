@@ -2,14 +2,29 @@ import { useSelector } from "react-redux";
 import styles from "./CatalogSection.module.css";
 import { selectorProducts } from "../../redux/products/selectors";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const CatalogSection = () => {
+
+  const [part, setPart] = useState(0);
+
   const products = useSelector(selectorProducts);
+
+  const newProducts = products.slice(0, part + 4);
+
+
+  const handleClick = (e) => {
+    if(part === 20) {
+      e.target.style.display="none";
+      return;
+    }
+    setPart(part + 4);
+  }
 
   return (
     <div className={styles.catalogSection}>
       <ul>
-        {products.map((product) => (
+        {newProducts.map((product) => (
           <li className={styles.list} key={product.id}>
             <img
               src={product.gallery[0].original}
@@ -53,6 +68,7 @@ const CatalogSection = () => {
           </li>
         ))}
       </ul>
+      <button onClick={handleClick}>Load More</button>
     </div>
   );
 };

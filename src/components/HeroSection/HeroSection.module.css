@@ -4,6 +4,7 @@
     background-size: cover;
     background-position: center;
     height: 696px;
+    position: relative;
 }
 .button{
     margin-top: 40px;
@@ -12,6 +13,8 @@
     border: none;
     background-color: #D84343;
     color: white;
+    text-decoration: none;
+    display: inline-block;
 }
 .heading{
     color: white;

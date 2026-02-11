@@ -5,16 +5,16 @@ const productSlice = createSlice({
   name: "Products",
   initialState: {
     items: [],
-    oneItem : {}
+    oneItem: null,
   },
   extraReducers: (builder) => {
     builder.addCase(fetchAllProduct.fulfilled, (state, action) => {
       state.items = action.payload.items;
-    })
-    builder.addCase(fetchOneProduct.fulfilled, (state, action) => {
+    });
 
+    builder.addCase(fetchOneProduct.fulfilled, (state, action) => {
       state.oneItem = action.payload;
-    })
+    });
   },
 });
 
