@@ -68,7 +68,7 @@ const CatalogSection = () => {
           </li>
         ))}
       </ul>
-      <button onClick={handleClick}>Load More</button>
+      <button className={styles.load} onClick={handleClick}>Load More</button>
     </div>
   );
 };

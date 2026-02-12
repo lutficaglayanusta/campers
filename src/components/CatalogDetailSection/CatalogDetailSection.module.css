@@ -1,0 +1,39 @@
+.heading{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.info{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 20px 0;
+}
+.price{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.description{
+    color: #6C717B;
+}
+.images{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.image{
+    border-radius: 10px;
+}
+.nav{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-top: 20px;
+}
+.nav li{
+    font-size: 1.25rem;
+}
+.nav li a{
+    text-decoration:none;
+    color: black;
+}

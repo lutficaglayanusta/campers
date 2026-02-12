@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 696px;
+    min-height: 100vh;
     position: relative;
 }
 .button{
