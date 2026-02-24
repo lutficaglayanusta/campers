@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import styles from "./CatalogDetailSection.module.css";
 import { selectorOneProduct } from "../../redux/products/selectors";
 import { NavLink, Outlet } from "react-router-dom";
+import ContactForm from "../ContactForm/ContactForm";
 
 const CatalogDetailSection = () => {
 
@@ -43,7 +44,11 @@ const CatalogDetailSection = () => {
                             <NavLink to="reviews">Reviews</NavLink>
                         </li>
                     </ul>
-                    <Outlet />
+                    <div className={styles.content}>
+                        <Outlet />
+                        <ContactForm />
+                    </div>
+                    
           </div>
           
             </section>

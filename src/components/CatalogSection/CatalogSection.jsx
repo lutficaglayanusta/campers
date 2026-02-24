@@ -63,7 +63,7 @@ const CatalogSection = () => {
                   {product.AC && "AC"}
                 </li>
               </ul>
-              <Link className={styles.link} to={`/catalog/${product.id}`}>Show more</Link>
+              <Link className={styles.link} to={`/catalog/${product.id}/features`}>Show more</Link>
             </div>
           </li>
         ))}

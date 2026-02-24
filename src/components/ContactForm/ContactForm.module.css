@@ -1,0 +1,33 @@
+.contactForm{
+    padding: 44px;
+    border-radius: 10px;
+    border: 1px solid #DADDE1;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+}
+.form input{
+    padding: 18px 337px 18px 18px;
+    border-radius: 12px;
+    border: none;
+    background-color: #DADDE1;
+}
+.form textarea{
+    padding: 18px 308px 76px 18px;
+    border-radius: 12px;
+    border: none;
+    background-color: #DADDE1;
+}
+.form button{
+    padding: 16px 60px ;
+    border-radius: 200px;
+    border: none;
+    background-color: #E44848;
+    color: white;
+    margin: 24px auto;
+    width: 166px;
+
+}
