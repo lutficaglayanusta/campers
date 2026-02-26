@@ -1,10 +1,15 @@
+import { useDispatch } from "react-redux";
 import styles from "./SideBar.module.css";
 import { Formik, Form, Field } from "formik";
+import { fetchFilteredProducts } from "../../redux/products/operations";
 
 // Very simple Formik form using native checkbox/radio inputs (no arrays/constants)
 const SideBar = () => {
+
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    dispatch(fetchFilteredProducts(values));
 
     actions.resetForm();
   };
@@ -34,7 +39,7 @@ const SideBar = () => {
             </label>
 
             <label className={styles.card}>
-              <Field className={styles.inputHidden} type="checkbox" name="equipment" value="Automatic" />
+              <Field className={styles.inputHidden} type="checkbox" name="equipment" value="automatic" />
               <img src="../../../diagram.svg" alt="diagram" />
               
               Automatic
@@ -63,19 +68,19 @@ const SideBar = () => {
 
           <div className={styles.grid}>
             <label className={styles.card}>
-              <Field className={styles.inputHidden} type="radio" name="type" value="Van" />
+              <Field className={styles.inputHidden} type="radio" name="type" value="panelTruck" />
               <img src="../../../bi_grid-1x2.svg" alt="" />
               Van
             </label>
 
             <label className={styles.card}>
-              <Field className={styles.inputHidden} type="radio" name="type" value="Fully Integrated" />
+              <Field className={styles.inputHidden} type="radio" name="type" value="fullyIntegrated" />
               <img src="../../../bi_grid.svg" alt="" />
               Fully Integrated
             </label>
 
             <label className={styles.card}>
-              <Field className={styles.inputHidden} type="radio" name="type" value="Alcove" />
+              <Field className={styles.inputHidden} type="radio" name="type" value="alcove" />
               <img src="../../../bi_grid-3x3-gap.svg" alt="" />
               Alcove
             </label>

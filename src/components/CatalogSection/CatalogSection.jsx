@@ -14,11 +14,11 @@ const CatalogSection = () => {
 
 
   const handleClick = (e) => {
-    if(part === 20) {
+    setPart(part + 4);
+    if(part + 4 >= products.length) {
       e.target.style.display="none";
       return;
     }
-    setPart(part + 4);
   }
 
   return (
@@ -68,7 +68,7 @@ const CatalogSection = () => {
           </li>
         ))}
       </ul>
-      <button className={styles.load} onClick={handleClick}>Load More</button>
+      {products.length > 4 && <button className={styles.load} onClick={handleClick}>Load More</button>}
     </div>
   );
 };
