@@ -51,15 +51,15 @@ const CatalogSection = () => {
                   {product.transmission}
                 </li>
                 <li>
-                  <img src="../../../public/fuel-pump.svg" width={20} height={20} alt="fuel pump" />
+                  <img src="../../../fuel-pump.svg" width={20} height={20} alt="fuel pump" />
                   {product.engine}
                 </li>
                 <li>
-                  {product.kitchen && <img src="../../../public/cup-hot.svg" width={20} height={20} alt="kitchen"/>}
+                  {product.kitchen && <img src="../../../cup-hot.svg" width={20} height={20} alt="kitchen"/>}
                   {product.kitchen && "Kitchen"}
                 </li>
                 <li>
-                  {product.AC && <img src="../../../public/wind.svg" width={20} height={20} alt="wind"/>}
+                  {product.AC && <img src="../../../wind.svg" width={20} height={20} alt="wind"/>}
                   {product.AC && "AC"}
                 </li>
               </ul>

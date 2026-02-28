@@ -22,7 +22,7 @@ const ProductReviews = () => {
                 <p style={{marginBottom:10}}>{item.reviewer_name}</p>
                 <p>
                   {[...Array(item.reviewer_rating)].map((_, i) => (
-                    <img key={i} src="../../../public/star.svg" width="20" height="20" alt="star" />
+                    <img key={i} src="../../../star.svg" width="20" height="20" alt="star" />
                   ))}
                 </p>
               </div>

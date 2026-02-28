@@ -20,7 +20,7 @@ const ProductFeatures = () => {
           </li>
           <li>
             <img
-              src="../../../public/fuel-pump.svg"
+              src="../../../fuel-pump.svg"
               width={20}
               height={20}
               alt="fuel pump"
@@ -30,7 +30,7 @@ const ProductFeatures = () => {
           <li>
             {product.kitchen && (
               <img
-                src="../../../public/cup-hot.svg"
+                src="../../../cup-hot.svg"
                 width={20}
                 height={20}
                 alt="kitchen"
@@ -41,7 +41,7 @@ const ProductFeatures = () => {
           <li>
             {product.AC && (
               <img
-                src="../../../public/wind.svg"
+                src="../../../wind.svg"
                 width={20}
                 height={20}
                 alt="wind"
