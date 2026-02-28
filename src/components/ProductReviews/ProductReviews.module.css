@@ -1,0 +1,26 @@
+.reviews ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+.reviewer{
+    display: flex;
+    gap: 16px;
+    margin-bottom:20px;
+}
+.initial{
+    width: 40px;
+    height: 40px;
+    background-color: #F2F4F7;
+    border-radius: 50%;
+    color:#E44848;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.comment{
+    color: #6C717B;
+    line-height:1.5rem;
+}
