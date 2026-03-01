@@ -1,3 +1,6 @@
+.reviews{
+    margin-top: 24px;
+}
 .reviews ul{
     list-style: none;
     display: flex;

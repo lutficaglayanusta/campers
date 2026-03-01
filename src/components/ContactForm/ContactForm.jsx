@@ -9,8 +9,8 @@ const ContactForm = () => {
 
   return (
       <div className={styles.contactForm}>
-          <h3>Book your campervan now</h3>
-          <p>
+          <h3 className={styles.heading}>Book your campervan now</h3>
+          <p className={styles.text}>
               Stay connected! We are always ready to help you.
           </p>
       <Formik

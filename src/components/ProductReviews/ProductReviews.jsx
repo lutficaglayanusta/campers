@@ -5,8 +5,6 @@ import styles from "./ProductReviews.module.css";
 const ProductReviews = () => {
   const product = useSelector(selectorOneProduct);
 
-  console.log(product);
-
   return (
     <div className={styles.reviews}>
       <ul>

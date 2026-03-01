@@ -54,14 +54,18 @@ const CatalogSection = () => {
                   <img src="../../../fuel-pump.svg" width={20} height={20} alt="fuel pump" />
                   {product.engine}
                 </li>
-                <li>
-                  {product.kitchen && <img src="../../../cup-hot.svg" width={20} height={20} alt="kitchen"/>}
-                  {product.kitchen && "Kitchen"}
-                </li>
-                <li>
-                  {product.AC && <img src="../../../wind.svg" width={20} height={20} alt="wind"/>}
-                  {product.AC && "AC"}
-                </li>
+                {product.kitchen && (
+                  <li>
+                    <img src="../../../cup-hot.svg" width={20} height={20} alt="kitchen"/>
+                    Kitchen
+                  </li>
+                )}
+                {product.AC && (
+                  <li>
+                    <img src="../../../wind.svg" width={20} height={20} alt="wind"/>
+                    AC
+                  </li>
+                )}
               </ul>
               <Link className={styles.link} to={`/catalog/${product.id}/features`}>Show more</Link>
             </div>

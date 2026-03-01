@@ -42,3 +42,19 @@
     gap: 50px;
     margin-top: 30px;
 }
+.rating{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.location{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.active{
+    padding-bottom: 5px;
+    border-bottom: 3px solid #E44848;
+}

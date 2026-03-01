@@ -27,28 +27,23 @@ const ProductFeatures = () => {
             />
             {product.engine}
           </li>
-          <li>
-            {product.kitchen && (
+          {product.kitchen && (
+            <li>
               <img
                 src="../../../cup-hot.svg"
                 width={20}
                 height={20}
                 alt="kitchen"
               />
-            )}
-            {product.kitchen && "Kitchen"}
-          </li>
-          <li>
-            {product.AC && (
-              <img
-                src="../../../wind.svg"
-                width={20}
-                height={20}
-                alt="wind"
-              />
-            )}
-            {product.AC && "AC"}
-          </li>
+              Kitchen
+            </li>
+          )}
+          {product.AC && (
+            <li>
+              <img src="../../../wind.svg" width={20} height={20} alt="wind" />
+              AC
+            </li>
+          )}
           <li>
             {product.radio && (
               <img
@@ -73,7 +68,10 @@ const ProductFeatures = () => {
             <li>Consumption</li>
           </ul>
           <ul>
-            <li>{product.form[0].toUpperCase()  + product.form.substr(1,product.form.length) }</li>
+            <li>
+              {product.form[0].toUpperCase() +
+                product.form.substr(1, product.form.length)}
+            </li>
             <li>{product.length}</li>
             <li>{product.width}</li>
             <li>{product.height}</li>

@@ -29,5 +29,13 @@
     color: white;
     margin: 24px auto;
     width: 166px;
-
+}
+.heading{
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+}
+.text{
+    color: #6C717B;
+    line-height: 1.5rem;
 }
