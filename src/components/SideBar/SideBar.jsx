@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import styles from "./SideBar.module.css";
 import { Formik, Form, Field } from "formik";
 import { fetchFilteredProducts } from "../../redux/products/operations";
+import toast from "react-hot-toast";
 
 // Very simple Formik form using native checkbox/radio inputs (no arrays/constants)
 const SideBar = () => {
@@ -9,7 +10,26 @@ const SideBar = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(fetchFilteredProducts(values));
+
+    if(values.equipment.length === 0 && values.type === "" && values.location === "") {
+      toast.error("Please select at least one filter");
+      return;
+    }
+
+
+    dispatch(fetchFilteredProducts(values))
+    .unwrap()
+    .then(() => {
+      toast.success("Products filtered successfully");
+    })
+    .catch((e) => {
+      console.log(e);
+      if(e === "Request failed with status code 404") {
+        toast.error("No products found with the selected filters");
+        return;
+      }
+      toast.error("An error occurred while filtering products");
+    });
 
     actions.resetForm();
   };

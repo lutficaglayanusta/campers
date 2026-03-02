@@ -29,7 +29,6 @@ export const fetchFilteredProducts = createAsyncThunk(
   "products/fetchFilteredProducts",
   async (filters, thunkAPI) => {
     let query = `/campers?location=${filters.location}&form=${filters.type}`;
-    console.log(filters);
     if (filters.equipment.includes("AC")) {
       query += `&AC=true`;
     }
@@ -46,11 +45,9 @@ export const fetchFilteredProducts = createAsyncThunk(
       query += `&transmission=automatic`;
     }
     
-    console.log(query);
 
     try {
       const res = await axios.get(query);
-      console.log(res.data);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

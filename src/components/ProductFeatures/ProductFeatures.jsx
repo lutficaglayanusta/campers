@@ -16,7 +16,7 @@ const ProductFeatures = () => {
               height={20}
               alt="diagram"
             />
-            {product.transmission}
+            {product.transmission[0].toUpperCase() + product.transmission.slice(1)}
           </li>
           <li>
             <img
@@ -25,7 +25,7 @@ const ProductFeatures = () => {
               height={20}
               alt="fuel pump"
             />
-            {product.engine}
+            {product.engine[0].toUpperCase() + product.engine.slice(1)}
           </li>
           {product.kitchen && (
             <li>

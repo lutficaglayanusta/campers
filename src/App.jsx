@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Header from "./components/Header/Header";
 import ProductFeatures from "./components/ProductFeatures/ProductFeatures";
 import ProductReviews from "./components/ProductReviews/ProductReviews";
@@ -23,6 +24,7 @@ function App() {
           </Route >
         </Routes>
       </Suspense>
+      <Toaster position="top-right" duration={2000} />
     </>
   );
 }

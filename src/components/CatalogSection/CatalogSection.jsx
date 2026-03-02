@@ -1,16 +1,31 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./CatalogSection.module.css";
 import { selectorProducts } from "../../redux/products/selectors";
+import { addFavorite, removeFavorite } from "../../redux/favorites/slice";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const CatalogSection = () => {
 
   const [part, setPart] = useState(0);
+  const dispatch = useDispatch();
 
   const products = useSelector(selectorProducts);
+  const favorites = useSelector(state => state.favorites.items);
+
+  useEffect(() => {
+    setPart(0);
+  }, [products]);
 
   const newProducts = products.slice(0, part + 4);
+
+  const handleToggleFavorite = (productId) => {
+    if (favorites.includes(productId)) {
+      dispatch(removeFavorite(productId));
+    } else {
+      dispatch(addFavorite(productId));
+    }
+  };
 
 
   const handleClick = (e) => {
@@ -36,23 +51,37 @@ const CatalogSection = () => {
             <div>
               <div className={styles.header}>
                 <h3>{product.name}</h3>
-                <p>{product.price}</p>
+                <div className={styles.priceContainer}>
+                  <p>€{parseFloat(product.price).toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+              useGrouping: false,
+            })}</p>
+                  <button
+                    className={styles.heartBtn}
+                    onClick={() => handleToggleFavorite(product.id)}
+                  >
+                    {favorites.includes(product.id) ? "♥" : "♡"}
+                  </button>
+                </div>
               </div>
               <div className={styles.subHeader}>
+                <img src="../../../star.svg" alt="" />
                 <p>
                   {product.rating}({product.reviews.length} Reviews)
                 </p>
+                <img src="../../../map.svg" alt="" />
                 <p>{product.location}</p>
               </div>
-              <p className={styles.description}>{product.description}</p>
+              <p className={styles.description}>{product.description.slice(0, 70)}...</p>
               <ul className={styles.features}>
                 <li>
                   <img src="../../../diagram.svg" width={20} height={20} alt="diagram" />
-                  {product.transmission}
+                  {product.transmission[0].toUpperCase() + product.transmission.slice(1)}
                 </li>
                 <li>
                   <img src="../../../fuel-pump.svg" width={20} height={20} alt="fuel pump" />
-                  {product.engine}
+                  {product.engine[0].toUpperCase() + product.engine.slice(1)}
                 </li>
                 {product.kitchen && (
                   <li>
@@ -72,7 +101,7 @@ const CatalogSection = () => {
           </li>
         ))}
       </ul>
-      {products.length > 4 && <button className={styles.load} onClick={handleClick}>Load More</button>}
+      {products.length > 4 && newProducts.length < products.length && <button className={styles.load} onClick={handleClick}>Load More</button>}
     </div>
   );
 };

@@ -13,6 +13,7 @@
 .header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .header h3{
     font-size: 1.5rem;
@@ -22,13 +23,31 @@
     font-size: 1.25rem;
     line-height: 2rem;
 }
+.priceContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.heartBtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 0;
+    transition: color 0.2s ease;
+    color: #E44848;
+}
+.heartBtn:hover{
+    opacity: 0.8;
+}
 .subHeader{
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin: 20px 0px;
 }
 .description{
     margin: 24px 0px;
+    color: #6C717B;
 }
 .features{
     display: flex;

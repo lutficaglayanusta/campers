@@ -39,3 +39,12 @@
     color: #6C717B;
     line-height: 1.5rem;
 }
+.error{
+    color: red;
+    font-size: 0.875rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.error::before{
+    content: "*";
+}
