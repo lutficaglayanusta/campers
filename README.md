@@ -1,16 +1,76 @@
-# React + Vite
+# Campers
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Campers is a web application designed for users to explore and book camper vans for their travels. The project provides a seamless experience for browsing a catalog of campers, filtering them based on specific needs, and viewing detailed information, including features and reviews.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home Page**: A welcoming landing page with a hero section to start your journey.
+- **Camper Catalog**: Browse a wide selection of campers with basic information and pricing.
+- **Advanced Filtering**: Filter the catalog by location, equipment (AC, Kitchen, TV, Bathroom, etc.), and vehicle type.
+- **Product Details**: Deep dive into each camper's specifications, features, and user reviews.
+- **Favorites**: Save your favorite campers for quick access later.
+- **Booking System**: Integrated contact form for booking inquiries using Formik and Yup for validation.
+- **Responsive Design**: Optimized for various screen sizes.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, Vite
+- **State Management**: Redux Toolkit (with persistence for favorites)
+- **Routing**: React Router 7
+- **API Interaction**: Axios
+- **Forms**: Formik & Yup
+- **Notifications**: React Hot Toast
+- **Styling**: CSS Modules
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (Latest LTS version recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd campers
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Project
+
+To start the development server:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173`.
+
+### Building for Production
+
+To create a production build:
+```bash
+npm run build
+```
+
+## Project Structure
+
+- `src/components`: Reusable UI components.
+- `src/pages`: Main application views (Home, Catalog, Product Details).
+- `src/redux`: Redux slices and operations for products and favorites.
+- `src/assets`: Static assets like images and styles.
+
+## API Reference
+
+The project uses a mock API for camper data:
+`https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers`
+
+## License
+
+This project is private and for educational purposes.

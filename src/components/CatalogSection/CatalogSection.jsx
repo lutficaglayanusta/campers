@@ -3,7 +3,7 @@ import styles from "./CatalogSection.module.css";
 import { selectorProducts } from "../../redux/products/selectors";
 import { addFavorite, removeFavorite } from "../../redux/favorites/slice";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CatalogSection = () => {
 
@@ -13,9 +13,12 @@ const CatalogSection = () => {
   const products = useSelector(selectorProducts);
   const favorites = useSelector(state => state.favorites.items);
 
-  useEffect(() => {
+  const [prevProducts, setPrevProducts] = useState(products);
+
+  if (products !== prevProducts) {
     setPart(0);
-  }, [products]);
+    setPrevProducts(products);
+  }
 
   const newProducts = products.slice(0, part + 4);
 
